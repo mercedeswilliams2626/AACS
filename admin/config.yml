@@ -1,0 +1,26 @@
+# Netlify CMS Configuration
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images/uploads"  # Media files will be stored in this folder
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"      # Used in previews and cms
+    label: "Blog"    # Displayed in the UI
+    folder: "content/blog"    # Source folder for blog posts
+    create: true       # Allow users to create new blog posts
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"      # Used in previews and cms
+    label: "Pages"    # Displayed in the UI
+    folder: "content/pages"    # Source folder for static pages
+    create: true       # Allow users to create new pages
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
